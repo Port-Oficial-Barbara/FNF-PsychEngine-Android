@@ -1,10 +1,9 @@
-package;
+package backend;
 
-#if android
+
 import android.Tools;
 import android.Permissions;
 import android.PermissionsList;
-#end
 import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
 import openfl.utils.Assets as OpenFlAssets;
