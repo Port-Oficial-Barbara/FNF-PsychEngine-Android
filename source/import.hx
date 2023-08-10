@@ -1,4 +1,4 @@
-#if !macro
+
 //Discord API
 #if desktop
 import backend.Discord;
@@ -8,10 +8,6 @@ import backend.Discord;
 #if LUA_ALLOWED
 import llua.*;
 import llua.Lua;
-#end
-
-#if ACHIEVEMENTS_ALLOWED
-import backend.Achievements;
 #end
 
 import backend.Paths;
@@ -25,7 +21,6 @@ import backend.Conductor;
 import backend.BaseStage;
 import backend.Difficulty;
 import backend.Mods;
-import backend.SUtil;
 
 import objects.Alphabet;
 import objects.BGSprite;
@@ -52,4 +47,3 @@ import flixel.group.FlxSpriteGroup;
 import flixel.group.FlxGroup.FlxTypedGroup;
 
 using StringTools;
-#end
