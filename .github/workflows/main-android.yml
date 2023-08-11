@@ -51,6 +51,7 @@ jobs:
       - name: Installing Libraries
         run: |
           haxelib setup ~/haxelib
+          haxelib git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools
           haxelib install hxcpp 4.2.1 > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib run hmm install
