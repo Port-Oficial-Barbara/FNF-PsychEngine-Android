@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache/restore@main
         with:
           path: |
-            ~/haxelib
+            .haxelib/
             ~/.gradle
             export/release/android/haxe
             export/release/android/obj
@@ -41,7 +41,9 @@ jobs:
           haxelib install flixel 5.2.2 --quiet
           haxelib git hxCodec https://github.com/mcagabe19/hxCodec
           # haxelib install hscript --quiet
-          haxelib install hxcpp 4.2.1 --quiet
+          haxelib install hxcpp 4.2.1 > /dev/null --quiet
+          haxelib install hmm --quiet
+          haxelib run hmm install
           haxelib install lime 7.9.0 --quiet
           haxelib git linc_luajit https://github.com/mcagabe19/linc_luajit
           haxelib install openfl 9.2.1 --quiet
@@ -96,7 +98,7 @@ jobs:
         uses: actions/cache/save@main
         with:
           path: |
-            ~/haxelib
+            .haxelib/
             ~/.gradle
             export/release/android/haxe
             export/release/android/obj
