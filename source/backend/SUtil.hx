@@ -1,6 +1,7 @@
 package backend;
 
 #if android
+import android.Tools;
 import android.content.Context;
 import android.widget.Toast;
 import android.os.Environment;
@@ -25,10 +26,8 @@ using StringTools;
 
 enum StorageType
 {
-	INTERNAL;
 	EXTERNAL;
 	EXTERNAL_DATA;
-	MEDIA;
 }
 
 /**
@@ -47,14 +46,8 @@ class SUtil
 		#if android
 		switch (type)
 		{
-			case INTERNAL:
-				daPath = Context.getFilesDir() + '/';
-			case EXTERNAL_DATA:
-				daPath = Context.getExternalFilesDir(null) + '/';
 			case EXTERNAL:
-				daPath = Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file') + '/';
-			case MEDIA:
-				daPath = Environment.getExternalStorageDirectory() + '/Android/media/' + Application.current.meta.get('packageName') + '/';
+				daPath = Tools.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file') + '/';
 		}
 		#elseif ios
 		daPath = LimeSystem.applicationStorageDirectory;
